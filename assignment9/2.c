@@ -1,23 +1,22 @@
 #include<stdio.h>
 int main(){
-    int marks[5];
+    int sub1,sub2,sub3,sub4,sub5;
     printf("enter marks of first subject :");
-    scanf("%d",&marks[0]);
+    scanf("%d",&sub1);
     printf("enter marks of secound subject :");
-    scanf("%d",&marks[1]);
+    scanf("%d",&sub2);
     printf("enter marks of third subject :");
-    scanf("%d",&marks[2]);
+    scanf("%d",&sub3);
     printf("enter marks of fourth subject :");
-    scanf("%d",&marks[3]);
+    scanf("%d",&sub4);
     printf("enter marks of fifth subject :");
-    scanf("%d",&marks[4]);
-    if(marks[5]>=33){
-        printf("PASSED\n");
-        int sum=marks[0]+marks[2]+marks[1]+marks[3]+marks[4];
-        printf("total marks obtain by student is %d",sum);
-    }
-    else if(marks[5]<33){
+    scanf("%d",&sub5);
+    if(sub1>=33 ||sub2>=33 || sub3>=33 ||sub4>=33 || sub5>=33){
+        printf("PASSED\n");}
+    else if(sub1<33 || sub2<33 || sub3<33 || sub4<33 || sub5<33 )
         printf("FAIL");
     }
+    int sum=sub1+sub2+sub3+sub4+sub5;
+    printf("sum of marks in all sun is %d ",sum);
     return 0;
 }
