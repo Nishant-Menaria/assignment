@@ -1,30 +1,46 @@
 #include<stdio.h>
-int armstrong(int n);
+void armstrong(int n);
+int countno(int n);
 int main(){
     int n;
-    printf("Enter the number you want to chech its a armstrong number or not :");
+    printf("Enter your armstrong number :");
     scanf("%d",&n);
 
-    int result=armstrong(n);
-    if(result==1){
-        printf("%d is an armstrong number ",n);
-    }
-    else if(result==0){
-        printf("%d is not an armstrong number",n);
-    }
+    armstrong(n);
     return 0;
 }
 
-int armstrong(int n){
-    int N=n;
+void armstrong(int n){
+    int Number=n;
+    int power=countno(n);
     int sum=0;
+    int i,mult;
     while(n>0){
+        mult=1;
         int mod=n%10;
-        int n=n/10;
-        sum=sum+mod*mod*mod;
-        if(sum==N ){
-            return 1;
+        i=power;
+        while(i>0){
+            mult*=mod;
+            if(i==1){
+                sum+=mult;
+            }
+            i--;
         }
+        n/=10;
     }
-    return 0;
+    if(sum==Number){
+        printf("The given number is an armstrong number.");
+    }
+    else{
+        printf("The given number is not an armstrong number.");
+    }
+}
+
+int countno(int n){
+    int count=0;
+    while(n>0){
+        n/=10;
+        count++;
+    }
+    return count;
 }
